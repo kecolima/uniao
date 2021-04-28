@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div id="navbar" class="container-fluid bg-primary">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img alt="UDV" src="{{url(mix('site/img/udv.png'))}}" class="img-responsive"></a>
+            <a class="navbar-brand" href="/painel"><img alt="UDV" src="{{url(mix('site/img/udv.png'))}}" class="img-responsive"></a>
         </div>
         <ul class="nav navbar-nav">
         <li class="nav-item">
