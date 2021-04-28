@@ -1,62 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://udv.org.br/" target="_blank"><img src="https://udv.org.br/wp-content/uploads/2016/09/centro-espirita-beneficente-uniao-do-vegetal1.png" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## DESAFIO CARGO ANALISTA DE DESENVOLVIMENTO DE SISTEMAS
 
-## About Laravel
+O desafio tem como objetivo avaliar a fluência, as técnicas de desenvolvimento bem e a agilidade dos candidatos na
+resolução de problemas. O cenário do software é hipotético e visa meramente a aplicação de técnicas e conceitos de
+desenvolvimento próximos aos aplicados no dia-a-dia dos projetos do Escritório da Diretoria Geral.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## O desafio:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Desenvolver um software simples de cadastro de funcionários conforme escopo descrito abaixo, utilizando o framework
+PHP Laravel na sua versão 6.0 ou mais recente e banco de dados PostgreSql ou MySQL;
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Escopo:
 
-## Learning Laravel
+Usuários
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+CRUD: Nome, Perfil de acesso, E-mail, Senha
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+=> Perfis de acesso:
+- Administrador: Pode ver e editar todos os dados sistema;
+- Supervisor: Pode ver seu Departamento e seus Funcionários podendo editar os dados no seu escopo;
+- Funcionário: Pode ver apenas os seus dados, sem permissão de edição.
 
-## Laravel Sponsors
+Regras:
+O usuário deverá realizar a autenticação utilizando e-mail e senha. Todos os dados são obrigatórios.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Departamentos
 
-### Premium Partners
+CRUD: Nome, Telefone(s)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+Regras:
+Na listagem de departamentos deverá constar o total de funcionários e o custo total com salários de cada
+departamento.
+Apenas o nome do Departamento é obrigatório.
+Departamentos podem ter um ou mais telefones.
 
-## Contributing
+Cargos
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+CRUD: Departamento, Nome, Salário base
 
-## Code of Conduct
+Regras:
+Na listagem de cargos deverá constar o número de funcionários e o custo total com salários de cada cargo.
+Todos os dados são obrigatórios.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Funcionários
 
-## Security Vulnerabilities
+CRUD: Nome, Data de nascimento, Sexo, E-mail, Senha, Salário, Endereços, Telefone(s), Cargo, Categoria,
+Situação
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+=> Categorias: Treinee, Júnior, Pleno, Sênior, Master;
+=> Situações: Ativo, Inativo, Em férias, Aposentado;
 
-## License
+Regras:
+No cadastro apenas o Nome, Data de nascimento, Sexo, E-mail, Senha são obrigatórios;
+Os campos Cargo, Categoria, Situação, Salário só poderão ser modificados pelos históricos;
+A senha deverá ter 8 dígitos e ser gerada aleatoriamente.
+Funcionário pode ter um ou mais endereços.
+Funcionário pode ter um ou mais telefones.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Histórico do Funcionário
+
+CRUD: Data, Tipo histórico, Descrição
+
+=> Tipos de histórico:
+- Admissão: Seta o Cargo, Categoria, Situação, Salário e data de admissão do funcionário;
+- Promoção: Mudar para q categoria acima com incremento de 25% no salário;
+- Reajuste de salário: Aumenta salário do funcionário;
+- Entrou/Retornou de férias: Mudar a situação do funcionário;
+- Aposentou-se: Mudar permanentemente a situação do funcionário;
+- Demissão: Muda a situação do funcionário para Inativo.
+
+Regras:
+A data do histórico é obrigatória em todos os registros que deverão ser listados em ordem cronológica da mais
+recente para a mais antiga.
+
+## Dashboard
+
+Deverá apresentar de forma resumida os dados do sistema tais como: Nº total de Departamentos, Cargos,
+Funcionários, Funcionários por situação, Funcionários por categoria, Valor total da folha de pagamento e lista de últimos
+registros de histórico com filtro por datas e tipo de histórico.
+
+Prazo para entrega do desafio: 4 dias
+
+Deve ter:
+- Dados de teste para popular o banco de dados;
+- Frameworks front-end como Bootstrap ou Tailwind;
+- Requisições assíncronas sempre que possível;
+
+Bom se tiver:
+- Formulários de cadastro e edição abrindo em janelas modais;
+
+Pontos de avaliação:
+- Exploração dos recursos e ferramentas do framework Laravel;
+- Modelagem;
+- Boas práticas de programação e domínio da linguagem PHP;
+- Clareza, Simplicidade e objetividade do código;
+- Reutilização de código;
+- Usabilidade e experiência do usuário.
