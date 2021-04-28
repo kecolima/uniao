@@ -32,10 +32,37 @@ class PainelController extends Controller
 
         $historicoFuncionarios = DB::table('historico_funcionarios')->limit(5)->orderBy('id', 'DESC')->get();
 
-        $total_funcionarios = DB::table('historico_funcionarios')
+        $search = request('search');
+
+
+        if ($search) {
+
+            $search = explode('/',$search);
+
+            if (isset($search[1])) {
+                $total_funcionarios = DB::table('historico_funcionarios')
+                ->join('funcionarios', 'historico_funcionarios.id_funcionario', '=', 'funcionarios.id')
+                ->select('funcionarios.nome as Funcionario', 'funcionarios.id as funcionariosId')
+                ->where('data', $search)
+                ->take(5)
+                ->get();
+            } else {
+                $total_funcionarios = DB::table('historico_funcionarios')
+                ->join('funcionarios', 'historico_funcionarios.id_funcionario', '=', 'funcionarios.id')
+                ->select('funcionarios.nome as Funcionario', 'funcionarios.id as funcionariosId')
+                ->where('tipoHistorico', $search)
+                ->take(5)
+                ->get();
+            }
+
+        } else {
+
+            $total_funcionarios = DB::table('historico_funcionarios')
             ->join('funcionarios', 'historico_funcionarios.id_funcionario', '=', 'funcionarios.id')
             ->select('funcionarios.nome as Funcionario', 'funcionarios.id as funcionariosId')
+            ->take(5)
             ->get();
+        }
 
         return view('admin/dashboard', ['departamentos' => $departamentos, 'cargos' => $cargos,
                                        'funcionarios' => $funcionarios, 'funcionario_ativo' => $funcionario_ativo,
@@ -44,7 +71,7 @@ class PainelController extends Controller
                                        'funcionario_junior' => $funcionario_junior, 'funcionario_pleno' => $funcionario_pleno,
                                        'funcionario_senior' => $funcionario_senior, 'funcionario_master' => $funcionario_master,
                                        'funcionario_salario_total' => $funcionario_salario_total, 'historicoFuncionarios' => $historicoFuncionarios,
-                                       'total_funcionarios' => $total_funcionarios
+                                       'total_funcionarios' => $total_funcionarios,'search' => $search
                                        ]);
     }
 

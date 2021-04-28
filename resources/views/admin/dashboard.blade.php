@@ -65,8 +65,11 @@
     @endforeach
 <div class="col-md-10 offset-md-1 dashboard-events-container">
     <hr>
+        <form action="/painel" method="GET">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Busca histórico por Tipo ou Data (d/m/a)">
+        </form>
         <p>
-           <h6>Últimos registros de histórico com filtro por datas e tipo de histórico</h6>
+           <h6>Últimos registros de histórico</h6>
         </p>
         <table width="100%" class="table table-striped table-hover">
         <thead class="thead-dark table-dark">
@@ -78,12 +81,14 @@
             </tr>
         </thead>
         @foreach($historicoFuncionarios as $historicoFuncionario)
+            @if($nome[$historicoFuncionario->id])
             <tr>
                 <td>{{$nome[$historicoFuncionario->id]}}</td>
                 <td>{{$historicoFuncionario->tipoHistorico}}</td>
                 <td>{{$historicoFuncionario->descricao}}</td>
                 <td>{{$historicoFuncionario->data}}</td>
             </tr>
+            @endif
         @endforeach
     </table>
 </div>
