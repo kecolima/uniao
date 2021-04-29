@@ -22,7 +22,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nome:</strong>
-                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+                <input type="text" name="nome" id="nome" required class="form-control" placeholder="Nome">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

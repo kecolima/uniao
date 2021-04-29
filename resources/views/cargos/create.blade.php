@@ -21,14 +21,15 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nome:</strong>
-            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+            <input type="text" name="nome" id="nome" required class="form-control" placeholder="Nome">
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Departamento:</strong>
-                <select class="form-control" id="departamento" name="departamento">
+                <select required class="form-control" id="departamento" name="departamento">
+                <option value="">Departamento</option>
                     @foreach($departamentos as $departamento)
                     <option value="{{$departamento->id}}">{{$departamento->nome}}</option>
                     @endforeach
@@ -38,7 +39,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Salário base:</strong>
-                <input type="text" name="salarioBase" id="salarioBase" class="form-control" placeholder="Salário base">
+                <input type="text" name="salarioBase" id="salarioBase" required class="form-control" placeholder="Salário base">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

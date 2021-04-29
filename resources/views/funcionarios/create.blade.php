@@ -22,19 +22,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nome:</strong>
-                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+                <input type="text" name="nome" id="nome" required class="form-control" placeholder="Nome">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Data de Nascimento:</strong>
-                <input type="text" name="dataNascimento" id="dataNascimento" class="form-control" placeholder="Data de Nascimento">
+                <input type="text" name="dataNascimento" id="dataNascimento" required class="form-control" placeholder="Data de Nascimento">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sexo:</strong>
-                <select class="form-control" id="sexo" name="sexo">
+                <select required class="form-control" id="sexo" name="sexo">
                     <option value="">Selecione o sexo</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Feminino">Feminino</option>
@@ -44,13 +44,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Senha:</strong>
-                <input type="text" name="senha" id="senha" class="form-control" placeholder="Senha">
+                <input type="text" name="senha" id="senha" required class="form-control" placeholder="Senha">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>E-mail:</strong>
-                <input type="text" name="email" id="email" class="form-control" placeholder="E-mail">
+                <input type="text" name="email" id="email" required class="form-control" placeholder="E-mail">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
